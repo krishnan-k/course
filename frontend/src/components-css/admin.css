@@ -1,0 +1,126 @@
+.admin_pannel_menu ul {
+    padding: 20px 0 0;
+    margin: 0;
+}
+
+.admin_pannel_menu ul li {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 18px 40px;
+    list-style: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.admin_pannel_menu {
+    max-width: 400px;
+    background: #F3F4F8;
+    height: 100vh;
+}
+
+.pannel {
+    display: grid;
+    grid-template-columns: 400px auto;
+    width: 100%;
+}
+
+.form-control-section h5 {
+    font-weight: 600;
+    letter-spacing: normal;
+    margin-bottom: 18px;
+}
+
+.form-control-section {
+    padding: 40px;
+    margin: 0 0 30px;
+}
+
+.form-control-section .form_title, .form-control-section .form_description {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control-section input[type="text"], .form-control-section .dropdown-list, .form-control-section textarea {
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    transition: box-shadow 0.3s linear;
+    background: #F3F4F8;
+}
+
+.form-control-section textarea {
+    min-height: 180px;
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-content>* {
+    width: calc(50% - 20px);
+}
+
+.upload-img, .upload-video {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-img .input-file, .upload-video .input-file {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    position: relative;
+    border-radius: 5px;
+    min-height: 335px;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.form-control-section input[type="text"]::placeholder, .form-control-section .dropdown-list::placeholder, .form-control-section textarea::placeholder {
+    color: #ADB1BA;
+}
+
+.save-continue {
+    background: #8B5AEE;
+    color: white;
+    border: none;
+}
+
+.save-draft {
+    color: black;
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.save-continue, .save-draft {
+    padding: 12px 20px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.form-button {
+    display: flex;
+    justify-content: space-between;
+}
+.area-label {
+    color: #8080806e;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 10px;
+}
