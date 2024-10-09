@@ -53,9 +53,9 @@ async function run() {
         })
 
         //delete method
-        app.delete("/delete/:id", async(req, res) =>{
+        app.delete("/delete/:id", async (req, res) => {
             const id = req.params.id;
-            const filter = {_id: new ObjectId(id)}
+            const filter = { _id: new ObjectId(id) }
             const result = await onlineCourse.deleteOne(filter);
             res.send(result);
         })
@@ -64,10 +64,14 @@ async function run() {
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
         // Ensures that the client will close when you finish/error
-        //await client.close();
+        // await client.close();
     }
 }
 run().catch(console.dir);
+
+
+
+
 
 app.listen(port, () => {
     console.log(`listing on port ${port}`);

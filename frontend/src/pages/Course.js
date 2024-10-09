@@ -4,17 +4,16 @@ import { IoIosBookmarks, IoMdSettings } from "react-icons/io";
 import { Link } from 'react-router-dom';
 const Course = () => {
   const [courseData, setCourseData] = useState([]);
-  const [chapterData, setChapterData] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/courseget")
       .then((res) => res.json())
       .then((data) => setCourseData(data));
   })
-  useEffect(() => {
-    fetch("http://localhost:5000/chapterget")
-      .then((res) => res.json())
-      .then((data) => setChapterData(data));
-  })
+
+  const chapters = [
+    { title: 'Chapter 1', topics: ['Topic 1', 'Topic 2', 'Topic 3'] },
+    { title: 'Chapter 2', topics: ['Topic 4', 'Topic 5', 'Topic 6'] },
+  ];
 
   return (
     <div className="pannel">
@@ -27,14 +26,11 @@ const Course = () => {
       </div>
       <div className='course-details-data'>
         {courseData.map((item) => (
-          <div>
-            <div className='details-content' key={item._id}>
+          <div key={item._id}>
+            <div className='details-content'>
               <h2 className='title course-title'>{item.formTitle}
                 <Link to='/chapter'><FaPlus /></Link>
               </h2>
-              <div className='chapter-content'>
-                d
-              </div>
             </div>
           </div>
         ))}

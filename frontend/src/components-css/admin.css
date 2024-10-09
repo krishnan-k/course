@@ -146,7 +146,9 @@
     color: #E98174;
 }
 
-
+.admin_pannel_menu ul li a {
+    text-decoration: none;
+}
 @media screen and (max-width: 749px){
     .pannel {
         grid-template-columns: auto auto;
