@@ -28,6 +28,7 @@ async function run() {
         await client.connect();
         const onlineCourse = client.db('academycourse').collection('courseone');
         const onlineChapter = client.db('coursedata').collection('chapter');
+        const onlineTopic = client.db('topicdata').collection('topic');
 
         //post method
         app.post("/coursemern", async (req, res) => {
@@ -41,6 +42,11 @@ async function run() {
             const result = await onlineChapter.insertOne(data);
             res.send(result);
         });
+        app.post("/topic", async (req, res) => {
+            const data = req.body;
+            const result = await onlineTopic.insertOne(data);
+            res.send(result);
+        });
 
         //get method
         app.get("/courseget", async (req, res) => {
@@ -51,12 +57,80 @@ async function run() {
             const data = await onlineChapter.find().toArray();
             res.send(data);
         })
+        app.get("/chapterview/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) }
+            const result = await onlineChapter.findOne(filter)
+            res.send(result)
+        })
+        app.get("/topicget", async (req, res) => {
+            const data = await onlineTopic.find().toArray();
+            res.send(data);
+        })
+
+        app.get("/topview/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) }
+            const result = await onlineTopic.findOne(filter)
+            res.send(result)
+        })
+
+
+        //update method
+        app.patch("/chapterupdate/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) }
+            const data = req.body
+
+            const updateData = {
+                $set: {
+                    ...data
+                }
+            }
+            const option = { upsert: true }
+            const result = await onlineChapter.updateOne(
+                filter,
+                updateData,
+                option
+            )
+            res.send(result);
+        })
+        app.patch("/topicupdate/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) }
+            const data = req.body
+
+            const updateData = {
+                $set: {
+                    ...data
+                }
+            }
+            const option = { upsert: true }
+            const result = await onlineTopic.updateOne(
+                filter,
+                updateData,
+                option
+            )
+            res.send(result);
+        })
 
         //delete method
         app.delete("/delete/:id", async (req, res) => {
             const id = req.params.id;
             const filter = { _id: new ObjectId(id) }
             const result = await onlineCourse.deleteOne(filter);
+            res.send(result);
+        })
+        app.delete("/deletechapter/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) }
+            const result = await onlineChapter.deleteOne(filter);
+            res.send(result);
+        })
+        app.delete("/deletetopic/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) }
+            const result = await onlineTopic.deleteOne(filter);
             res.send(result);
         })
         // Send a ping to confirm a successful connection

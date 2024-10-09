@@ -124,7 +124,13 @@
     font-size: 14px;
     margin-top: 10px;
 }
-.course-details-data .details-content h2.title {
+.chapter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.course-details-data .details-content h2.title,
+.chapters-container h3{
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 600;
@@ -132,6 +138,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.chapters-container {
+    padding: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #e981745c;
+}
+.chapters-container h3 {
+    background: #E98174;
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    display: flex;
+    font-size: 16px;
+}
+
+.topic-heading:first-child h4{
+    color: white;
+    background: #4872FC;
+}
+.course-details h4 {
+    align-items: center;
+    justify-content: space-between;
+    color: #4872FC;
+    width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.topic-heading {
+    border: 1px solid #4872fc7d;
+    padding: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+p.description {
+    padding: 14px;
+    border: 1px solid #7CA27A;
+    border-radius: 5px;
+    margin: 14px;
+}
+.course-details-data .details-content h2.title svg{
+    font-size: 12px;
+    color: black;
 }
 .course-details-data .details-content {
     border: 1px solid #e981745c;
@@ -141,13 +198,82 @@
 }
 .course-details-data {
     padding: 35px;
+    margin-top: 10px;
 }
 .course-title{
     color: #E98174;
 }
-
+.chapters-container svg {
+    font-size: 14px;
+    color: white;
+}
 .admin_pannel_menu ul li a {
     text-decoration: none;
+}
+span.create-chapter {
+    position: absolute;
+    right: -25px;
+    font-size: 12px;
+    color: white;
+    font-weight: 400;
+    top: -50px;
+    text-align: center;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+a.tooltip-info {
+    position: relative;
+}
+a.tooltip-info:hover span.create-chapter{
+    visibility: visible;
+    opacity: 1;
+}
+span.create-chapter:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    bottom: -5px;
+}
+.top-edit-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+h2.empty-chapter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 10px;
+    gap: 15px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+a.create-chapter-info {
+    padding: 12px 20px;
+    line-height: normal;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    background: #8B5AEE;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+.topic-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.topic-heading:not(:first-child) .topic-content svg {
+    color: #4872FC;
 }
 @media screen and (max-width: 749px){
     .pannel {

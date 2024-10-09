@@ -1,7 +1,7 @@
 import React from 'react'
 import '../components-css/admin.css'
 import { FaHome, FaUser } from "react-icons/fa";
-import { IoIosBookmarks,IoMdSettings } from "react-icons/io";
+import { IoIosBookmarks, IoMdSettings } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 const Admin = () => {

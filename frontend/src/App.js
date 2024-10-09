@@ -5,7 +5,11 @@ import Home from './pages/Home';
 import Admin from './admin/Admin';
 import Newcourse from './admin/Newcourse';
 import Course from './pages/Course';
-import Chapter from './admin/Chapter';
+import Coursechapter from './admin/Coursechapter';
+import Coursetopic from './admin/Coursetopic';
+import Chapterupdate from './admin/Chapterupdate';
+import Topicupdate from './admin/Topicupdate';
+
 function App() {
   return (
     <div>
@@ -16,7 +20,10 @@ function App() {
           <Route path='/admin' element={<Admin />} />
           <Route path='/newcourse' element={<Newcourse />} />
           <Route path='/course' element={<Course />} />
-          <Route path='/chapter' element={<Chapter />} />
+          <Route path='/coursechapter' element={<Coursechapter />} />
+          <Route path='/coursetopic' element={<Coursetopic />} />
+          <Route path='/chapterupdate/:id' element={<Chapterupdate />} loader={({params}) => fetch(`http://localhost:5000/chapterupdate/${params.id}`)}/>
+          <Route path='/topicupdate/:id' element={<Topicupdate />} loader={({params}) => fetch(`http://localhost:5000/topicupdate/${params.id}`)}/>
         </Routes>
       </BrowserRouter>
     </div>

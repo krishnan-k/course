@@ -1,7 +1,8 @@
 import React from 'react'
 import Admin from './Admin';
-
-const Chapter = () => {
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const Coursechapter = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -19,8 +20,19 @@ const Chapter = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                alert('Courser Added Successfully')
+                toast.success('Course Added Successfully', {
+                    position: "bottom-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
                 form.reset();
+                window.location.href = "/course"
             })
     }
     return (
@@ -71,8 +83,9 @@ const Chapter = () => {
                     </div>
                 </form>
             </div>
+            <ToastContainer autoClose={1000} position="bottom-center" />
         </div>
     )
 }
 
-export default Chapter
+export default Coursechapter
