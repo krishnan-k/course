@@ -5,7 +5,7 @@ const storeItems = localStorage.getItem("cartItems");
 const initialState = { cartItems: storeItems ? JSON.parse(storeItems) : [] };
 
 const cartSlice = createSlice({
-    name: "cart",
+    name: "onlinecourse",
     initialState,
     reducers: {
         addToCourse: (state, action) => {

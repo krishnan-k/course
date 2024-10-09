@@ -124,3 +124,34 @@
     font-size: 14px;
     margin-top: 10px;
 }
+.course-details-data .details-content h2.title {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.course-details-data .details-content {
+    border: 1px solid #e981745c;
+    padding: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.course-details-data {
+    padding: 35px;
+}
+.course-title{
+    color: #E98174;
+}
+
+
+@media screen and (max-width: 749px){
+    .pannel {
+        grid-template-columns: auto auto;
+    }
+    .course-details-data{
+        padding: 15px;
+    }
+}
