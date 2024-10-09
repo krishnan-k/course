@@ -10,11 +10,6 @@ const Course = () => {
       .then((data) => setCourseData(data));
   })
 
-  const chapters = [
-    { title: 'Chapter 1', topics: ['Topic 1', 'Topic 2', 'Topic 3'] },
-    { title: 'Chapter 2', topics: ['Topic 4', 'Topic 5', 'Topic 6'] },
-  ];
-
   return (
     <div className="pannel">
       <div className='admin_pannel_menu'>
